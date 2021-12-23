@@ -1,0 +1,19 @@
+{
+  "name": "express-sequelize",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon index"
+  },
+  "keywords": [],
+  "author": "andrew.roztor99@gmail.com",
+  "dependencies": {
+    "express": "^4.17.2",
+    "sequelize": "^6.12.0",
+    "sqlite3": "^5.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
