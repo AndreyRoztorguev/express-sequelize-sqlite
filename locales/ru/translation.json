@@ -1,0 +1,10 @@
+{
+  "user_created_success": "Пользователь успешно создан!",
+  "user_not_found_exception": "Пользователь не найден!",
+  "invalid_id": "Не валидный id!",
+  "validation_exception": "Не правильное тело запроса!",
+  "user_null": "username не может быть пустым!",
+  "user_size": "username должен иметь минимум 4 и максимум 32 символа!",
+  "email_invalid": "Не валидный Email!",
+  "email_inuse": "Этот email уже занят!"
+}

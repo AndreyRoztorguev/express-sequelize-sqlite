@@ -4,11 +4,11 @@ module.exports = (err, req, res, next) => {
   if (errors) {
     validationErrors = {};
     errors.forEach((error) => {
-      validationErrors[error.param] = error.msg;
+      validationErrors[error.param] = req.t(error.msg);
     });
   }
   return res.status(status).send({
-    message: message,
+    message: req.t(message), // req.t this is middleware i18next
     timestamps: Date.now(),
     path: req.originalUrl,
     validationErrors,

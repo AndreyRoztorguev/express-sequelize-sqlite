@@ -30,28 +30,27 @@ router.post(
   "/users",
   body("username")
     .notEmpty()
-    .withMessage("username cannot be null")
+    .withMessage("user_null") // with i18next translations
     .bail()
     .isLength({ min: 4, max: 32 })
-    .withMessage("username must have min 4 and max 32 characters"),
+    .withMessage("user_size"),
   body("email")
     .isEmail()
-    .withMessage("Must be a valid email address")
+    .withMessage("email_invalid")
     .bail()
     .custom(async (email) => {
       const user = await UserService.findByEmail(email);
       if (user) {
-        throw new Error("This email is in use");
+        throw new Error("email_inuse");
       }
     }),
   async (req, res, next) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return next(new ValidationException(errors.array()));
-      //   return res.status(400).send(errors.array());
     }
     await UserService.create(req.body);
-    res.send("user is inserted");
+    res.send({ message: req.t("user_created_success") });
   }
 );
 
