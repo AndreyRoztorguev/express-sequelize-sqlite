@@ -21,6 +21,6 @@ if (process.env.NODE_ENV === "production") {
 
 app.listen(process.env.NODE_ENV || 3000, () => {
   console.log(
-    `app is running on port ${NODE_ENV}, mode: ${process.env.NODE_ENV}`
+    `app is running on port ${process.env.NODE_ENV}, mode: ${process.env.NODE_ENV}`
   );
 });
