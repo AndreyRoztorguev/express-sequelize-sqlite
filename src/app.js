@@ -31,6 +31,7 @@ const thisWillRunEveryRequest = (req, res, next) => {
 const app = express();
 app.use(middleware.handle(i18next));
 app.use(express.json());
+app.use("/public", express.static(path.join(__dirname, "..", "public"))); // http://localhost:3000/public/images/town.jpeg
 app.use(thisWillRunEveryRequest);
 app.use(UserRouter);
 app.use(ArticleRouter);
