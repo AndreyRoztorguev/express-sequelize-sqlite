@@ -8,6 +8,9 @@ Article.init(
     content: {
       type: DataTypes.STRING,
     },
+    userId: {
+      type: DataTypes.NUMBER,
+    },
   },
   { sequelize, modelName: "article" }
 );
