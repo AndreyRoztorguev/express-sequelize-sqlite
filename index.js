@@ -19,8 +19,8 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-app.listen(process.env.PORT || 3000, () => {
-  console.log(
-    `app is running on port ${process.env.PORT}, mode: ${process.env.NODE_ENV}`
-  );
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`app is running on port ${PORT}, mode: ${process.env.NODE_ENV}`);
 });
