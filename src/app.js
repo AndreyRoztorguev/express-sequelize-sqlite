@@ -6,6 +6,7 @@ const i18next = require("i18next");
 const Backend = require("i18next-fs-backend");
 const middleware = require("i18next-http-middleware");
 const path = require("path");
+const FileRouter = require("./file/fileRouter");
 
 i18next
   .use(Backend)
@@ -35,6 +36,7 @@ app.use("/public", express.static(path.join(__dirname, "..", "public"))); // htt
 app.use(thisWillRunEveryRequest);
 app.use(UserRouter);
 app.use(ArticleRouter);
+app.use(FileRouter);
 app.use(ErrorHandler);
 
 module.exports = app;

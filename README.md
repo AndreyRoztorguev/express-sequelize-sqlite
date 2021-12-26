@@ -42,7 +42,8 @@ Start the server
     sequelize,
     sqlite3,
     cross-env,
-    nodemon
+    nodemon,
+    multer
 
 ## Deployment
 

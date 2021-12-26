@@ -6,5 +6,6 @@
   "user_null": "username не может быть пустым!",
   "user_size": "username должен иметь минимум 4 и максимум 32 символа!",
   "email_invalid": "Не валидный Email!",
-  "email_inuse": "Этот email уже занят!"
+  "email_inuse": "Этот email уже занят!",
+  "upload_success": "Загрузка успешна!"
 }
