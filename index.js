@@ -1,6 +1,7 @@
 const sequelize = require("./src/config/database");
 const app = require("./src/app");
 const UserService = require("./src/user/UserService");
+const logger = require("./src/logger");
 
 if (process.env.NODE_ENV === "production") {
   sequelize.sync();
@@ -21,6 +22,14 @@ if (process.env.NODE_ENV === "production") {
 
 const PORT = process.env.PORT || 3000;
 
+// logs priority error is highest
+logger.error("error");
+logger.warn("warn");
+logger.info("info");
+logger.verbose("verbose");
+logger.debug("debug");
+logger.silly("silly");
+
 app.listen(PORT, () => {
-  console.log(`app is running on port ${PORT}, mode: ${process.env.NODE_ENV}`);
+  logger.info(`app is running on port ${PORT}, mode: ${process.env.NODE_ENV}`);
 });
